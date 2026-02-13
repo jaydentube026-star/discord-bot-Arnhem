@@ -33,18 +33,18 @@ GUILD_ID = 1467165888498368755
 # Moderation roles allowed
 
 ALLOWED_ROLES = { 
-        1467239358548545724,
+        1461389113906434096,
 }
 
 UNBAN_ROLES = {
-        1467239358548545724,
+        1461389113906434096,
 }
 
 LOG_CHANNELS = {
-    "ban": 1469441748555268262,
-    "kick": 1469441878624571475,
-    "warn": 1469441960392523776,
-    "unban": 1469442033533063361,
+    "ban": 1471844033860206814,
+    "kick": 1471844093142503424,
+    "warn": 1471844133495767300,
+    "unban": 1471844167284953305,
 }
 
 # ------------------- Bot -------------------
@@ -111,7 +111,7 @@ class EmbedModal(Modal, title="Maak een Embed"):
 @bot.tree.command(name="embed", description="Maak een embed via formulier", guild=discord.Object(id=GUILD_ID))
 async def embed_cmd(interaction: discord.Interaction):
     allowed_roles = { 
-        1467239358548545724,
+        1461389113906434096,
     }
     if not any(r.id in allowed_roles for r in interaction.user.roles):
         await interaction.response.send_message("❌ Je hebt geen toegang tot dit commando.", ephemeral=True)
@@ -251,7 +251,7 @@ class RoleEmbedModal(Modal, title="Maak een Role Embed"):
     guild=discord.Object(id=GUILD_ID)
 )
 async def roleembed(interaction: discord.Interaction):
-    allowed_roles = {1467239358548545724,}
+    allowed_roles = {1461389113906434096,}
     if not any(r.id in allowed_roles for r in interaction.user.roles):
         await interaction.response.send_message("❌ Je hebt geen toegang tot dit commando.", ephemeral=True)
         return
@@ -544,7 +544,7 @@ async def moderatie(interaction: discord.Interaction):
 
 # ✅ Rol-IDs die mogen
 ALLOWED_ROLES = { 
-        1467239358548545724,
+        1461389113906434096,
 }
 
 def has_allowed_role(interaction: discord.Interaction) -> bool:
@@ -620,7 +620,7 @@ async def listbans(interaction: discord.Interaction, limit: int = 10):
 @app_commands.describe(amount="Aantal berichten om te verwijderen (of 'all')")
 async def clear(interaction: discord.Interaction, amount: str):
     ALLOWED_ROLES = {
-        1467239358548545724,
+        1461389113906434096,
     }
 
     # Check of de gebruiker een van de rollen heeft
